@@ -3,6 +3,7 @@ import {activateScale, resetScale} from './scaling.js';
 import {addValidator, resetPristine, validatePristine} from './form-validate.js';
 import { sendData } from './api.js';
 import {renderFailMessage, renderSuccessMessage} from './messages.js';
+import {loadImg} from './setup-img.js';
 
 const GET_URL = 'https://28.javascript.pages.academy/kekstagram';
 const form = document.querySelector('.img-upload__form');
@@ -38,7 +39,11 @@ const openModal = () => {
 };
 
 const onCancelButtonclick = () => closeModal();
-const onFileInputChange = () => openModal();
+const onFileInputChange = (evt) => {
+  openModal();
+  loadImg(evt);
+};
+
 const onEffectsFieldChange = (evt) => changeEffect(evt);
 
 const onFormSubmit = (evt) => {

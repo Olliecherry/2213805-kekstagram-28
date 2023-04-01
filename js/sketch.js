@@ -8,6 +8,7 @@ const ERROR_TIMEOUT = 10000;
 const similarListTemplate = document.querySelector('#picture').content.querySelector('.picture');
 //нашли список фото
 const picturesList = document.querySelector('.pictures');
+const ERROR_LOAD = 'Произошла ошибка загрузки';
 
 const createPost = (data) => {
   //клонируем
@@ -46,7 +47,7 @@ const onGetFail = () => {
   errorBlock.style.color = 'yellow';
   errorBlock.style.backgroundColor = 'blue';
   errorBlock.style.textAlign = 'center';
-  errorBlock.textContent = 'Произошла ошибка загрузки';
+  errorBlock.textContent = ERROR_LOAD;
   errorBlock.style.padding = '30px';
   document.body.append(errorBlock);
 
